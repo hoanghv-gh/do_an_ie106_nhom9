@@ -36,25 +36,26 @@ BAOCAO/
 ├── .github/
 │   └── workflows/
 │       └── latex-build.yml     # GitHub Action workflow
-├── assets/
-│   ├── css/                    # CSS
-│   ├── js/                     #JS
-│   └── ui_logo/
+├── assets/                     # Thư mục chứa tài nguyên đa phương tiện của báo cáocáo
+│   ├── chart/                  # Ảnh biểu đồ và các ảnh khác
+│   └── uit_logo/               # Thư mục chứa logo trường
 │       └── uit_logo.png        # Logo trường
-├── docs/
-│   ├── assets/                 # Tài liệu tham khảo
+├── docs/                       # Thư mục deploy static page
+│   ├── index.html              # Trang index của static page
+│   ├── assets/                 # Tài nguyên của static page
 │   ├── output/                 # Thư mục chứa PDF (auto-generated)
 │   │   └── main.pdf            # File PDF được build tự động
-│   └── pages/
+│   └── pages/                  # Thư mục chứa các trang của static page
 │       ├── overview.html       # Trang tổng quan
 │       ├── pdf-viewer.html     # Trình xem PDF
-│       └── settings.html       # Cài đặt
-├── scripts/
+│       └── notion-viewer.html  # Trình xem notion các task và deadline dự án
+├── scripts/                    # Thư mục chứa scripts
+│   └── build.bat               # CLI tool build latex trên Windows          
 ├── src/                        # Source files LaTeX
 ├── styles/                     # Style và formatting files
 ├── main.tex                    # File LaTeX chính
-├── .gitignore
-└── README.md
+├── .gitignore                  # file .gitignore để loại bỏ một số file không cần thiết khi commit
+└── README.md                   # README mô tả dự án
 ```
 
 ---
