@@ -35,27 +35,28 @@ Dự án tập trung vào việc thiết kế và phát triển giao diện ngư
 BAOCAO/
 ├── .github/
 │   └── workflows/
-│       └── latex-build.yml     # GitHub Action workflow
-├── assets/                     # Thư mục chứa tài nguyên đa phương tiện của báo cáocáo
-│   ├── chart/                  # Ảnh biểu đồ và các ảnh khác
-│   └── uit_logo/               # Thư mục chứa logo trường
-│       └── uit_logo.png        # Logo trường
-├── docs/                       # Thư mục deploy static page
-│   ├── index.html              # Trang index của static page
-│   ├── assets/                 # Tài nguyên của static page
-│   ├── output/                 # Thư mục chứa PDF (auto-generated)
-│   │   └── main.pdf            # File PDF được build tự động
-│   └── pages/                  # Thư mục chứa các trang của static page
-│       ├── overview.html       # Trang tổng quan
-│       ├── pdf-viewer.html     # Trình xem PDF
-│       └── notion-viewer.html  # Trình xem notion các task và deadline dự án
-├── scripts/                    # Thư mục chứa scripts
-│   └── build.bat               # CLI tool build latex trên Windows          
-├── src/                        # Source files LaTeX
-├── styles/                     # Style và formatting files
-├── main.tex                    # File LaTeX chính
-├── .gitignore                  # file .gitignore để loại bỏ một số file không cần thiết khi commit
-└── README.md                   # README mô tả dự án
+│       └── latex-build.yml     # GitHub Action để tự động build LaTeX
+├── assets/                     # Tài nguyên đa phương tiện cho báo cáo
+│   ├── chart/                  # Ảnh biểu đồ, hình minh họa, v.v.
+│   └── uit_logo/               # Logo trường Đại học CNTT
+│       └── uit_logo.png
+├── docs/                       # Static page dùng để hiển thị báo cáo
+│   ├── index.html              # Trang chính của static page
+│   ├── assets/                 # Assets cho giao diện web (JS, CSS, hình ảnh)
+│   ├── output/                 # Chứa file PDF được build tự động
+│   │   └── main.pdf
+│   └── pages/                  # Các trang phụ cho static page
+│       ├── overview.html       # Trang tổng quan nội dung
+│       ├── pdf-viewer.html     # Trình xem PDF trực tiếp
+│       └── notion-viewer.html  # Trang nhúng Notion theo dõi tiến độ
+├── scripts/                    # Script tiện ích dùng để build hoặc chạy project
+│   └── build.bat               # Script CLI build LaTeX trên Windows
+├── src/                        # Source LaTeX chính (các chương, mục, nội dung)
+├── styles/                     # File định dạng, cấu hình style cho LaTeX
+├── main.tex                    # File LaTeX chính của báo cáo
+├── .gitignore                  # Loại trừ file/thư mục không cần theo dõi
+└── README.md                   # Mô tả tổng quan về dự án báo cáo
+
 ```
 
 ---
