@@ -1,0 +1,69 @@
+name: Build LaTeX to PDF and deploy to gh-pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build-latex:
+    runs-on: ubuntu-latest
+
+    env:
+      TEX_FILE: main.tex
+      OUTPUT_DIR: docs/output
+      PDF_NAME: main.pdf
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX (minimal)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-recommended texlive-latex-recommended
+
+      - name: Build PDF
+        run: |
+          mkdir -p "$OUTPUT_DIR"
+          latexmk -pdf -halt-on-error -interaction=nonstopmode -output-directory="$OUTPUT_DIR" "$TEX_FILE"
+          if [ ! -f "$OUTPUT_DIR/$PDF_NAME" ]; then
+            echo "PDF not generated!"
+            exit 1
+          fi
+
+      - name: Prepare gh-pages branch
+        run: |
+          REPO="https://github.com/${{ github.repository }}"
+          TOKEN_REPO="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+
+          if git ls-remote --exit-code --heads "$REPO" gh-pages; then
+            git clone --depth=1 --branch gh-pages "$REPO" gh-pages
+          else
+            mkdir gh-pages
+            cd gh-pages
+            git init
+            git checkout -b gh-pages
+            git remote add origin "$REPO"
+            cd ..
+          fi
+
+          # Copy PDF and add .nojekyll
+          cp "$OUTPUT_DIR/$PDF_NAME" gh-pages/$PDF_NAME
+          touch gh-pages/.nojekyll
+
+      - name: Commit and push to gh-pages
+        run: |
+          cd gh-pages
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+
+          if git status --porcelain | grep .; then
+            git add .
+            git commit -m "Update PDF from latest main"
+            git push origin gh-pages
+          else
+            echo "No changes to commit."
