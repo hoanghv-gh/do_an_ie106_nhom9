@@ -1,0 +1,44 @@
+<h1 style="margin-bottom: 2rem; color: var(--dark); font-weight: 700;">Quản lý và Theo dõi tiến độ dự án</h1>
+
+<div class="viewer-container">
+    <div class="viewer-header">
+        <div class="viewer-title">
+            Theo dõi tiến độ dự án qua Notion Calendar
+        </div>
+        <div class="viewer-actions">
+            <button class="btn btn-secondary" onclick="refreshNotion()">
+                Làm mới
+            </button>
+            <button class="btn btn-primary" onclick="window.open('https://www.notion.so/hoanghv-gh/Projects-Tasks-Thi-t-k-giao-di-n-ng-i-d-ng-Nh-m-9-1c46182789d880539cd9e686d9b19b99?source=copy_link', '_blank')">
+                Mở Notion
+            </button>
+        </div>
+    </div>
+    
+    <div class="loading-container" id="notion-loading" style="display: flex;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Đang tải Notion Calendar...</div>
+    </div>
+    
+    <iframe 
+        id="notionFrame" 
+        class="iframe-container"
+        style="display: none;">
+    </iframe>
+    
+    <div class="error-container" id="notion-placeholder" style="display: none;">
+        <div class="error-icon">📝</div>
+        <h3 style="margin-bottom: 1rem; color: var(--dark);">Không thể kết nối Notion</h3>
+        <p style="margin-bottom: 2rem;">
+          Không thể kết nối tới Notion, vui lòng liên hệ Admin.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+            <button class="btn btn-primary" onclick="refreshNotion()">
+                Thử lại
+            </button>
+            <button class="btn btn-secondary" onclick="router.navigate('overview')">
+                Về trang chủ
+            </button>
+        </div>
+    </div>
+</div>

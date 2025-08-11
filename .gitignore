@@ -1,0 +1,40 @@
+# --- LaTeX intermediate files ---
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.out
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.xdv
+*.run.xml
+
+
+# Output folder
+/out/
+
+# --- VS Code & OS-specific ---
+.vscode/
+*.DS_Store
+Thumbs.db
+
+# --- Backup files ---
+*~
+*.bak
+*.sav
+*.swp
+*.swo
+*.tmp
+
+# --- Output directories (if using build system) ---
+build/
+

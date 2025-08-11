@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quản lý Dự án & Báo cáo</title>
+    <meta name="description" content="Dashboard quản lý dự án với tích hợp Notion Calendar và xem báo cáo PDF">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/icons/uit_logo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
+    <!-- Base tag để đảm bảo relative paths work -->
+    <base href="./">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="mobile-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">
+                    ☰
+                </button>
+                <div class="logo">
+                    Dashboard
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    <span id="status-text">Đang khởi tạo...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav id="navigation">
+                <!-- Navigation được tạo bởi JavaScript -->
+                <div class="nav-section">
+                    <div class="nav-title">Đang tải...</div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div id="content-container">
+                <!-- Content được load bởi router -->
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Đang khởi tạo ứng dụng...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: flex;">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Đang tải Dashboard...</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    
+    <!-- SEO và Performance -->
+    <script>
+        // Preload critical pages
+        if ('IntersectionObserver' in window) {
+            const preloadPages = ['overview.html', 'pdf-viewer.html', 'notion-viewer.html'];
+            preloadPages.forEach(page => {
+                const link = document.createElement('link');
+                link.rel = 'prefetch';
+                link.href = page;
+                document.head.appendChild(link);
+            });
+        }
+    </script>
+</body>
+</html>

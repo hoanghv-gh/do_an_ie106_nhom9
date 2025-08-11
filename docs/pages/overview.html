@@ -1,0 +1,72 @@
+<h1 style="margin-bottom: 2rem; color: var(--dark); font-weight: 700;">Tổng quan Dashboard</h1>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-title">Báo cáo PDF</div>
+        <div class="stat-value">1</div>
+        <div class="stat-description">Báo cáo đồ án LaTeX</div>
+    </div>
+    <div class="stat-card" style="border-left-color: var(--secondary);">
+        <div class="stat-title">Quản lý Dự án</div>
+        <div class="stat-value">Notion</div>
+        <div class="stat-description">Calendar & Tasks</div>
+    </div>
+    <div class="stat-card" style="border-left-color: var(--accent);">
+        <div class="stat-title">Cập nhật cuối</div>
+        <div class="stat-value">Hôm nay</div>
+        <div class="stat-description">Auto-build từ GitHub</div>
+    </div>
+    <div class="stat-card" style="border-left-color: #10b981;">
+        <div class="stat-title">Trạng thái</div>
+        <div class="stat-value">Hoạt động</div>
+        <div class="stat-description">Sẵn sàng sử dụng</div>
+    </div>
+</div>
+
+<div class="viewer-container">
+    <div class="viewer-header">
+        <div class="viewer-title">
+            Hello! Đây là static page quản lý dự án nhóm!
+        </div>
+    </div>
+    
+    <div style="padding: 3rem 2rem; text-align: center;">
+        <h2 style="margin-bottom: 1rem; color: var(--dark); font-size: 1.75rem;">
+            Dashboard tối ưu cho việc quản lý đồ án nhóm
+        </h2>
+        <p style="margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.1rem; color: var(--gray-600);">
+            Theo dõi tiến độ, xem báo cáo PDF và quản lý tasks.
+        </p>
+        
+        <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto 3rem;">
+            <div class="feature-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 16px; text-align: left;">
+                <div style="font-size: 2rem; margin-bottom: 1rem;">📄</div>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Báo cáo PDF</h3>
+                <p style="opacity: 0.9; margin-bottom: 1.5rem;">Xem và tải xuống báo cáo đồ án LaTeX đã biên dịch</p>
+                <button class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);" onclick="router.navigate('pdf-viewer')">
+                    Xem ngay →
+                </button>
+            </div>
+            
+            <div class="feature-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 2rem; border-radius: 16px; text-align: left;">
+                <div style="font-size: 2rem; margin-bottom: 1rem;">📝</div>
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Quản lý Dự án</h3>
+                <p style="opacity: 0.9; margin-bottom: 1.5rem;">Theo dõi timeline và tasks thông qua Notion Calendar</p>
+                <button class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);" onclick="router.navigate('notion-viewer')">
+                    Truy cập →
+                </button>
+            </div>
+        </div>
+        
+        <div class="quick-actions" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="router.navigate('pdf-viewer')" style="padding: 0.75rem 2rem; font-size: 1rem;">
+                📄 Xem Báo cáo PDF
+            </button>
+            <button class="btn btn-secondary" onclick="router.navigate('notion-viewer')" style="padding: 0.75rem 2rem; font-size: 1rem;">
+                📝 Quản lý Dự án
+            </button>
+        </div>
+        
+
+    </div>
+</div>

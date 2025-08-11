@@ -1,0 +1,26 @@
+<h1 style="margin-bottom: 2rem; color: var(--dark); font-weight: 700;">Xem Báo Cáo Đồ Án</h1>
+
+<div class="viewer-container">
+    <div class="viewer-header">
+        <div class="viewer-title">
+            Báo cáo Đồ án PDF
+        </div>
+        <div class="viewer-actions">
+            <a href="output/main.pdf" class="btn btn-secondary" target="_blank">
+             Xem PDF trong Tab mới
+            </a>
+            <a href="output/main.pdf" class="btn btn-success" download>
+             Tải xuống PDF
+            </a>
+        </div>
+    </div>
+    <div class="loading-container" id="pdf-loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Đang tải PDF...</div>
+    </div>
+    <iframe 
+        id="pdfFrame" 
+        class="iframe-container"
+        style="display: none;">
+    </iframe>
+</div>

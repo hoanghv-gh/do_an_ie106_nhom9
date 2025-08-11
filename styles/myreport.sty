@@ -1,0 +1,62 @@
+% styles/myreport.sty
+\ProvidesPackage{myreport}[2025/08/03 Custom style for report class]
+
+% --- Required packages ---
+\RequirePackage[utf8]{inputenc}       % Input encoding UTF-8
+\RequirePackage[T5]{fontenc}          % T5 font encoding for Vietnamese
+\RequirePackage[vietnamese]{babel}    % Vietnamese language support
+\RequirePackage{times}                % Times New Roman font
+\RequirePackage{geometry}             % Page layout adjustments
+\RequirePackage{fancyhdr}             % Custom headers and footers
+\RequirePackage{multirow}             % Multirow support for tables
+\RequirePackage[table]{xcolor}        % Table coloring
+\RequirePackage{array}                % Enhanced table layout
+\RequirePackage{graphicx}             % Image inclusion
+\RequirePackage{tikz}                 % TikZ for drawing
+\RequirePackage{setspace}             % Line spacing adjustments
+\RequirePackage{eso-pic}              % Background content support
+\RequirePackage{setspace} % Line spacing adjustments
+\RequirePackage{hyperref} % Hyperlinks in the document
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{hyperref} 
+\usepackage{longtable}
+% --- TikZ library ---
+\usetikzlibrary{calc}                 % Calc library for TikZ position calculations
+
+% --- Page geometry ---
+\geometry{a4paper, left=3cm, right=2cm, top=3cm, bottom=2.5cm} % Page margins with a4paper
+
+% --- Header and footer setup ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{IE106 - Thiết kế giao diện người dùng}
+\fancyfoot[R]{\thepage\ | Page}
+\setlength{\headheight}{15pt}         % Header height to avoid warnings
+
+% --- Color definitions ---
+\definecolor{darkblue}{RGB}{0,0,139}         % Dark blue for borders
+\definecolor{lightblue}{RGB}{204,229,255}    % Light blue for table assignments
+
+
+% --- Command for cover page border ---
+\newcommand{\AddCoverBorder}{
+    \AddToShipoutPictureBG*{
+        \begin{tikzpicture}[remember picture,overlay]
+            \draw[line width=1pt,color=black]
+                ($(current page.north west)+(0.5cm,-0.5cm)$) rectangle 
+                ($(current page.south east)+(-0.5cm,0.5cm)$);
+            \draw[line width=4pt,color=darkblue]
+                ($(current page.north west)+(0.7cm,-0.7cm)$) rectangle 
+                ($(current page.south east)+(-0.7cm,0.7cm)$);
+        \end{tikzpicture}
+    }
+}
+
+% --- Command for table of contents ---
+\newcommand{\stdtoc}{
+    \tableofcontents
+    \newpage
+}
+
+\endinput
