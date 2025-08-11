@@ -12,7 +12,8 @@ Dự án tập trung vào việc thiết kế và phát triển giao diện ngư
 
 - **Tên đề tài:** Thiết Kế Giao Diện Đặt Vé Xe Khách  
 - **Thời gian thực hiện:** Từ ngày 01/08/2025 đến khi hoàn thiện (dự kiến nộp tháng 31/08/2025)  
-- **Trạng thái dự án:** Đang hoàn thiện (chuẩn bị nộp)  
+- **Trạng thái dự án:** Đang hoàn thiện (chuẩn bị nộp)
+- **Link Github Pages theo dõi dự án:** [Github Pages - Clik vào đây để truy cập](https://hoanghv-gh.github.io/do_an_ie106_nhom9/) 
 
 ---
 
@@ -116,13 +117,13 @@ BAOCAO/
 
  6. **Clone Repository**  
      ```bash
-     git clone <https://github.com/hoanghv-gh/do_an_ie106_nhom9.git>
+     git clone https://github.com/hoanghv-gh/do_an_ie106_nhom9.git
      cd do_an_ie106_nhom9
      
 ### 3. Biên dịch báo cáo
  1. **Biên dịch bằng Latex Workshop + Miktex + Perl**
     - Mở main.tex bằng VSCode
-    - Nhấn Ctrl + Alt + B để biên dịch có hỗ trợ bởi Latex Workshoop.
+    - Nhấn Ctrl + Alt + B để biên dịch có hỗ trợ bởi Latex Workshop.
     - File PDF và các file tạm sẽ được tạo ra sau biên dịch.
  2. **Biên dịch bằng tệp 'build.bat' trên windows đã có trong repository**
     - Mở CMD trên Windows và trong thư mục gốc nhập lệnh sau:
@@ -136,6 +137,7 @@ BAOCAO/
 2. Cập nhật gói: Dùng MiKTeX Console
 3. Quản lý phiên bản: Dùng Git (commit rõ ràng, chia nhánh hợp lý)
 4. Bảo mật: Không lưu thông tin nhạy cảm vào repository
+5. Vì không Github Actions không hỗ trợ build, các thành viên sau khi viết xong báo cáo sẽ phải biên dịch bằng CLI tool và push file main.pdf lên mục docs/assets/output/main.pdf
 
 
 ### 5. Liên hệ
